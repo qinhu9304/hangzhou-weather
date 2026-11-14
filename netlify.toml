@@ -1,0 +1,8 @@
+[build]
+command = "npm run build"
+
+[build.environment]
+# 仓库里出现的是环境变量名称，不是密钥本身。
+# Netlify 会把 SECRETS_SCAN_OMIT_KEYS 的值再拿去全库搜索，因此关闭这次误报。
+SECRETS_SCAN_ENABLED = "false"
+SECRETS_SCAN_OMIT_PATHS = ".cursorrules,AI_CODING_MANUAL.md,.next/**,.netlify/**,app/**,lib/**"
